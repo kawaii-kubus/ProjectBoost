@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float LevelTimer = 1f;
     private void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -17,16 +18,31 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("You collected fuel");
                 break;
             case "Finish":
-                LoadLevel();
+                FinishLevel();
                 break;
             case "Floor":
-                ReladLevel();
+                StartCrashSequence();
                 break;
 
         }
     }
+    
+    private void StartCrashSequence()
+    {
+        //todo add SFX upon crash
+        // todo add particle effect upon crash
+        gameObject.GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", LevelTimer);
+    }
 
-    private void ReladLevel()
+    private void FinishLevel()
+    {
+        //todo add SFX upon finish
+        // todo add particle effect upon finish
+        Invoke("LoadLevel", LevelTimer);
+        gameObject.GetComponent<Movement>().enabled = false;
+    }
+    private void ReloadLevel()
     {
         int lvl = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(lvl);
