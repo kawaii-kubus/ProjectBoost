@@ -7,40 +7,65 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float LevelTimer = 1f;
-    private void OnCollisionEnter(Collision collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case "Friendly":
-                Debug.Log("Hitted Friendly");
-                break;
-            case "Fuel":
-                Debug.Log("You collected fuel");
-                break;
-            case "Finish":
-                FinishLevel();
-                break;
-            case "Floor":
-                StartCrashSequence();
-                break;
+    [SerializeField] AudioClip crash;
+    [SerializeField] AudioClip win;
 
-        }
+    AudioSource myAudio;
+
+    bool isTransitioning = false;
+    private void Start()
+    {
+        myAudio = GetComponent<AudioSource>();
     }
-    
+    private void OnCollisionEnter(Collision collision)
+    {   if (isTransitioning == false)
+        {
+            switch (collision.gameObject.tag)
+            {
+                case "Friendly":
+                    Debug.Log("Hitted Friendly");
+                    break;
+                case "Fuel":
+                    Debug.Log("You collected fuel");
+                    break;
+                case "Finish":
+                    FinishLevel();
+                    break;
+                case "Floor":
+                    StartCrashSequence();
+                    break;
+
+            }
+        }
+
+    }
+
     private void StartCrashSequence()
     {
         //todo add SFX upon crash
         // todo add particle effect upon crash
+        isTransitioning = true;
+        myAudio.Stop();
+        myAudio.PlayOneShot(crash);
         gameObject.GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", LevelTimer);
+
+
+
     }
 
     private void FinishLevel()
     {
         //todo add SFX upon finish
         // todo add particle effect upon finish
+        isTransitioning = true;
+        myAudio.Stop();
         Invoke("LoadLevel", LevelTimer);
         gameObject.GetComponent<Movement>().enabled = false;
+        myAudio.PlayOneShot(win);
+
+
+
     }
     private void ReloadLevel()
     {
