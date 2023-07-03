@@ -36,23 +36,69 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            ApllyRotation(rotationThrust);
-            if(!leftBooster.isPlaying)
-                leftBooster.Play();
+            RotateLeft();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            ApllyRotation(-rotationThrust);
-            if (!rightBooster.isPlaying)
-                rightBooster.Play();
+            RotateRight();
 
         }
         else
         {
-            leftBooster.Stop();
-            rightBooster.Stop();
+            StopRotating();
         }
 
+    }
+    private void ProcessThrust()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            StartThrusting();
+        }
+        else
+        {
+            StopThrusting();
+        }
+
+    }
+
+    private void StopThrusting()
+    {
+        myAudioSource.Stop();
+        mainBooster.Stop();
+    }
+
+    private void StartThrusting()
+    {
+        myRigidbody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!myAudioSource.isPlaying)
+        {
+            myAudioSource.PlayOneShot(mainEngine);
+        }
+        if (!mainBooster.isPlaying)
+        {
+            mainBooster.Play();
+        }
+    }
+
+    private void StopRotating()
+    {
+        leftBooster.Stop();
+        rightBooster.Stop();
+    }
+
+    private void RotateRight()
+    {
+        ApllyRotation(-rotationThrust);
+        if (!rightBooster.isPlaying)
+            rightBooster.Play();
+    }
+
+    private void RotateLeft()
+    {
+        ApllyRotation(rotationThrust);
+        if (!leftBooster.isPlaying)
+            leftBooster.Play();
     }
 
     private void ApllyRotation(float rotationThisFrame)
@@ -63,27 +109,7 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void ProcessThrust()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Rotating Space");
 
-            myRigidbody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if (!myAudioSource.isPlaying)
-            {
-                myAudioSource.PlayOneShot(mainEngine);
-            }
-            if (!mainBooster.isPlaying)
-            {
-                mainBooster.Play();
-            }
-        }
-        else
-        {
-            myAudioSource.Stop();
-            mainBooster.Stop();
-        }
-     
-    }
+
+
 }

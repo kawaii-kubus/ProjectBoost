@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 1103147018}
   - component: {fileID: 8187936643951288663}
   - component: {fileID: 7629034939151435562}
+  - component: {fileID: 1106138676}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Player
@@ -253,9 +254,9 @@ MonoBehaviour:
   mainThrust: 700
   rotationThrust: 100
   mainEngine: {fileID: 8300000, guid: c723bdd209251ad4eb8220f9ed015eaa, type: 3}
-  mainBooster: {fileID: 0}
-  leftBooster: {fileID: 0}
-  rightBooster: {fileID: 0}
+  mainBooster: {fileID: 1531196814017883175}
+  leftBooster: {fileID: 5305824311588100928}
+  rightBooster: {fileID: 1142876208985480498}
 --- !u!82 &1103147018
 AudioSource:
   m_ObjectHideFlags: 0
@@ -382,6 +383,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1106138676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564306986283426122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098bdebc01f44284092cc1c0a89bc56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3382628068257919266
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +789,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 771087676723270698, guid: d4b06ebeeaf0ac044aeed997d98443c2, type: 3}
   m_PrefabInstance: {fileID: 558866143537890128}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1142876208985480498 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 584678573886053986, guid: d4b06ebeeaf0ac044aeed997d98443c2, type: 3}
+  m_PrefabInstance: {fileID: 558866143537890128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1693402861303120219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,6 +855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
+--- !u!198 &1531196814017883175 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
+  m_PrefabInstance: {fileID: 1693402861303120219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1698315948340668015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4940884351362868, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
@@ -899,6 +922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b06ebeeaf0ac044aeed997d98443c2, type: 3}
+--- !u!198 &5305824311588100928 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 584678573886053986, guid: d4b06ebeeaf0ac044aeed997d98443c2, type: 3}
+  m_PrefabInstance: {fileID: 4737541656169252130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5407790853614735624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 771087676723270698, guid: d4b06ebeeaf0ac044aeed997d98443c2, type: 3}

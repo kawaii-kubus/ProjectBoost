@@ -633,30 +633,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1108895272, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: leftBooster
-      value: 
-      objectReference: {fileID: 6415958817652672599}
-    - target: {fileID: 1108895272, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: mainBooster
-      value: 
-      objectReference: {fileID: 6415958817652672600}
-    - target: {fileID: 1108895272, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: rightBooster
-      value: 
-      objectReference: {fileID: 6415958817652672598}
-    - target: {fileID: 692138987512382695, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.687
-      objectReference: {fileID: 0}
-    - target: {fileID: 692138987512382695, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.148
-      objectReference: {fileID: 0}
-    - target: {fileID: 692138987512382695, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.058
-      objectReference: {fileID: 0}
     - target: {fileID: 1564306986283426122, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -705,32 +681,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8187936643951288663, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: leftBooster
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8187936643951288663, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: mainBooster
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8187936643951288663, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-      propertyPath: rightBooster
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
---- !u!198 &6415958817652672598 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1142876208985480498, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-  m_PrefabInstance: {fileID: 6415958817652672597}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6415958817652672599 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5305824311588100928, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-  m_PrefabInstance: {fileID: 6415958817652672597}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6415958817652672600 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1531196814017883175, guid: 052853615233eb543a00c85ac4c2487b, type: 3}
-  m_PrefabInstance: {fileID: 6415958817652672597}
-  m_PrefabAsset: {fileID: 0}
