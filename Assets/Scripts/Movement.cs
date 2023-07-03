@@ -14,7 +14,9 @@ public class Movement : MonoBehaviour
     AudioSource myAudioSource;
     Rigidbody myRigidbody;
 
-
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem leftBooster;
+    [SerializeField] ParticleSystem rightBooster;
 
 
     void Start()
@@ -35,11 +37,20 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             ApllyRotation(rotationThrust);
+            if(!leftBooster.isPlaying)
+                leftBooster.Play();
         }
         else if (Input.GetKey(KeyCode.D))
         {
             ApllyRotation(-rotationThrust);
+            if (!rightBooster.isPlaying)
+                rightBooster.Play();
 
+        }
+        else
+        {
+            leftBooster.Stop();
+            rightBooster.Stop();
         }
 
     }
@@ -62,12 +73,17 @@ public class Movement : MonoBehaviour
             if (!myAudioSource.isPlaying)
             {
                 myAudioSource.PlayOneShot(mainEngine);
-
             }
-
-
+            if (!mainBooster.isPlaying)
+            {
+                mainBooster.Play();
+            }
         }
         else
+        {
             myAudioSource.Stop();
+            mainBooster.Stop();
+        }
+     
     }
 }
